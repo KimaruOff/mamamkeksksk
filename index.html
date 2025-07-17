@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Луно - Читы для игр</title>
+    <style>
+        :root {
+            --dark-purple: #1a052a;
+            --purple: #3a0a6a;
+            --light-purple: #6a2c9e;
+            --accent: #9c4dff;
+            --text: #e6d5ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-purple);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--purple), var(--light-purple));
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(156, 77, 255, 0.7);
+            position: relative;
+            z-index: 2;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .moon {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #fff 10%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(1px);
+            top: -30px;
+            right: 50px;
+            opacity: 0.2;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cheat-column {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            background: rgba(58, 10, 106, 0.5);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cheat-column:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .cheat-column::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+
+        .game-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--light-purple);
+        }
+
+        .cheat-item {
+            background: rgba(106, 44, 158, 0.3);
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .cheat-item:hover {
+            background: rgba(106, 44, 158, 0.5);
+            transform: translateX(5px);
+        }
+
+        .cheat-name {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+
+        .cheat-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            background: rgba(26, 5, 42, 0.8);
+            border-top: 1px solid var(--light-purple);
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(156, 77, 255, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(156, 77, 255, 0); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cheat-column {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <header>
+        <div class="moon"></div>
+        <h1>Луно</h1>
+        <p class="subtitle">Премиум читы для ваших любимых игр</p>
+    </header>
+
+    <div class="container">
+        <!-- Колонка 1: Standoff 2 -->
+        <div class="cheat-column pulse">
+            <h2 class="game-title">Standoff 2</h2>
+            <div class="cheat-item">
+                <div class="cheat-name">AimBot Pro</div>
+                <div class="cheat-desc">Автоматическое наведение на противников</div>
+            </div>
+            <div class="cheat-item">
+                <div class="cheat-name">WallHack Deluxe</div>
+                <div class="cheat-desc">Видите врагов сквозь стены</div>
+            </div>
+            <div class="cheat-item">
+                <div class="cheat-name">No Recoil</div>
+                <div class="cheat-desc">Полное отсутствие отдачи</div>
+            </div>
+            <div class="cheat-item">
+                <div class="cheat-name">Speed Hack</div>
+                <div class="cheat-desc">Увеличенная скорость передвижения</div>
+            </div>
+        </div>
+
+        <!-- Колонка 2: Chicken Gun -->
+        <div class="cheat-column">
+            <h2 class="game-title">Chicken Gun</h2>
+            <div class="cheat-item">
+                <div class="cheat-name">Aim Assist+</div>
+                <div class="cheat-desc">Улучшенное прицеливание</div>
+            </div>
+            <div class="cheat-item">
+                <div class="cheat-name">Unlimited Ammo</div>
+                <div class="cheat-desc">Бесконечные патроны</div>
+            </div>
+            <div class="cheat-item">
+                <div class="cheat-name">God Mode</div>
+                <div class="cheat-desc">Режим бога - неуязвимость</div>
+            </div>
+            <div class="cheat-item">
+                <div class="cheat-name">Skin Changer</div>
+                <div class="cheat-desc">Любые скины бесплатно</div>
+            </div>
+        </div>
+
+        <!-- Колонка 3: Bhop Pro -->
+        <div class="cheat-column">
+            <h2 class="game-title">Bhop Pro</h2>
+            <div class="cheat-item">
+                <div class="cheat-name">Auto Bhop</div>
+                <div class="cheat-desc">Автоматические прыжки</div>
+            </div>
+            <div class="cheat-item">
+                <div class="cheat-name">Perfect Strafe</div>
+                <div class="cheat-desc">Идеальные страфы</div>
+            </div>
+            <div class="cheat-item">
+                <div class="cheat-name">Speed Control</div>
+                <div class="cheat-desc">Контроль скорости</div>
+            </div>
+            <div class="cheat-item">
+                <div class="cheat-name">Edge Jump</div>
+                <div class="cheat-desc">Автопрыжки с края</div>
+            </div>
+        </div>
+
+        <!-- Колонка 4: CS 2 -->
+        <div class="cheat-column pulse">
+            <h2 class="game-title">CS 2</h2>
+            <div class="cheat-item">
+                <div class="cheat-name">Legit Hack</div>
+                <div class="cheat-desc">Максимально скрытный чит</div>
+            </div>
+            <div class="cheat-item">
+                <div class="cheat-name">ESP Premium</div>
+                <div class="cheat-desc">Полная информация об игроках</div>
+            </div>
+            <div class="cheat-item">
+                <div class="cheat-name">TriggerBot</div>
+                <div class="cheat-desc">Автовыстрел при наведении</div>
+            </div>
+            <div class="cheat-item">
+                <div class="cheat-name">Radar Hack</div>
+                <div class="cheat-desc">Все игроки на радаре</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2023 Луно - Все читы проверены и работают на текущей версии игр</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.6;">Используйте на свой страх и риск</p>
+    </footer>
+
+    <script>
+        // Создание звездного фона
+        document.addEventListener('DOMContentLoaded', function() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 100;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Случайные параметры для звезд
+                const size = Math.random() * 3;
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                const duration = 2 + Math.random() * 3;
+                const delay = Math.random() * 5;
+                
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = `${x}%`;
+                star.style.top = `${y}%`;
+                star.style.setProperty('--duration', `${duration}s`);
+                star.style.animationDelay = `${delay}s`;
+                
+                starsContainer.appendChild(star);
+            }
+
+            // Анимация при наведении на элементы
+            const cheatItems = document.querySelectorAll('.cheat-item');
+            cheatItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = `0 0 15px ${getRandomColor()}`;
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = 'none';
+                });
+            });
+
+            // Пульсация для колонок
+            setInterval(() => {
+                const columns = document.querySelectorAll('.cheat-column');
+                columns.forEach(col => {
+                    if (col.classList.contains('pulse')) {
+                        col.classList.remove('pulse');
+                    } else {
+                        col.classList.add('pulse');
+                    }
+                });
+            }, 4000);
+        });
+
+        function getRandomColor() {
+            const colors = ['#9c4dff', '#ff4df2', '#4d9cff', '#ff9c4d'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+    </script>
+</body>
+</html>
